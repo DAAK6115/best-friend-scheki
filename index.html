@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Veux-tu être ma meilleure amie ?</title>
+    <meta name="theme-color" content="#ff4fa3" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true"></div>
+
+    <main class="app" id="app">
+      <header class="topbar">
+        <div class="pill">
+          <span class="dot"></span>
+          <span id="fromLabel">DE</span>
+          <strong id="fromName">DIOMANDE AZZIZ </strong>
+        </div>
+
+        <div class="step">
+          <span id="stepText">1/4</span>
+        </div>
+      </header>
+
+      <div class="progress" aria-hidden="true">
+        <div class="bar" id="bar"></div>
+      </div>
+
+      <section class="card">
+        <!-- STEP 1 -->
+        <article class="screen active" data-screen="1">
+          <div class="badge">MESSAGE PRIVÉ</div>
+          <h1>
+            Coucou <span class="highlight" id="herName">Prunelle</span>
+          </h1>
+          <p class="lead" id="introText">
+            J’ai codé une mini app juste pour toi. Glisse dans les écrans et lis
+            jusqu’au bout.
+          </p>
+
+          <div class="hero">
+            <div class="bear" aria-hidden="true">🧸</div>
+            <div class="hearts" aria-hidden="true">💗💗💗</div>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" data-next>Suivant →</button>
+          </div>
+
+        </article>
+
+        <!-- STEP 2 -->
+<article class="screen" data-screen="2">
+  <div class="badge">CONFESSION</div>
+  <h2 id="confTitle">Tu rends mes journées meilleures</h2>
+  <p class="lead" id="confText">
+    Chaque discussion avec toi me donne le sourire. J’aime ton énergie,
+    ton regard et ta douceur sauvage.
+  </p>
+
+  <div class="masonry" id="masonry"></div>
+
+  <div class="actions">
+    <button class="btn ghost" data-back>← Retour</button>
+    <button class="btn primary" data-next>Suivant →</button>
+  </div>
+  <div class="floating-notes" id="floatingNotes" aria-hidden="true"></div>
+</article>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lbCard" role="dialog" aria-modal="true">
+    <div class="lbTop">
+      <button class="lbBtn" id="lbClose" aria-label="Fermer">✕</button>
+      <button class="lbBtn" id="lbCopy" aria-label="Copier un petit mot">♡</button>
+    </div>
+
+    <img class="lbImg" id="lbImg" src="" alt="Photo" />
+
+    <div class="lbNav">
+      <button class="lbBtn" id="lbPrev" aria-label="Précédente">‹</button>
+      <button class="lbBtn" id="lbNext" aria-label="Suivante">›</button>
+    </div>
+  </div>
+</div>
+
+
+        <!-- STEP 3 -->
+        <article class="screen" data-screen="3">
+          <div class="badge">QUESTION</div>
+          <h2>
+            Veux-tu être ma <span class="highlight">Meilleure amie</span> ?
+          </h2>
+          <p class="lead">
+            Moi Azziz, je te promet : attention, rires, petits moments simples et beaucoup de sincérité.
+          </p>
+
+          <div class="form">
+            <div class="field">
+              <label for="dateInput">Choisis un jour pour une visite</label>
+              <input id="dateInput" type="date" />
+              <small class="hint" id="dateHint">Sélectionne une date avant de dire oui.</small>
+            </div>
+
+            <div class="field">
+              <label for="timeInput">Heure prévue</label>
+              <input id="timeInput" type="time" value="20:00" />
+            </div>
+          </div>
+
+          <div class="actions dual">
+            <button class="btn danger" id="noBtn" type="button">J’ai besoin d’y penser</button>
+            <button class="btn primary" id="yesBtn" type="button">Oui 💖</button>
+          </div>
+
+          <div class="actions">
+            <button class="btn ghost" data-back>← Retour</button>
+          </div>
+        </article>
+
+        <!-- STEP 4 -->
+        <article class="screen" data-screen="4">
+          <div class="badge">RÉPONSE CONFIRMÉE</div>
+          <h2>
+            C’est un grand <span class="highlight">OUI !</span>
+          </h2>
+
+          <p class="lead">
+            Date choisie : <strong id="chosenDate">—</strong><br />
+            Heure prévue : <strong id="chosenTime">—</strong>
+          </p>
+
+          <div class="countdown" role="timer" aria-live="polite">
+            <div class="box">
+              <div class="num" id="d">00</div>
+              <div class="lbl">Jours</div>
+            </div>
+            <div class="box">
+              <div class="num" id="h">00</div>
+              <div class="lbl">Heures</div>
+            </div>
+            <div class="box">
+              <div class="num" id="m">00</div>
+              <div class="lbl">Minutes</div>
+            </div>
+            <div class="box">
+              <div class="num" id="s">00</div>
+              <div class="lbl">Secondes</div>
+            </div>
+          </div>
+
+          <p class="hint">
+            Le décompte est lancé jusqu’à notre date 💗
+          </p>
+
+          <div class="actions">
+            <button class="btn ghost" id="copyLinkBtn" type="button">Copier le lien</button>
+            <button class="btn primary" id="restartBtn" type="button">Rejouer ↻</button>
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <span class="tiny">Fait avec 💗 — simple, propre, et responsive.</span>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
